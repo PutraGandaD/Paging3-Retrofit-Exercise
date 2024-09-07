@@ -44,7 +44,10 @@ class MainActivity : AppCompatActivity() {
         observer()
 
         binding.etSearchText.doAfterTextChanged { inputText ->
-            mainViewModel.searchRepos(inputText.toString())
+            lifecycleScope.launch {
+                delay(3000L)
+                mainViewModel.searchRepos(inputText.toString())
+            }
         }
     }
 
