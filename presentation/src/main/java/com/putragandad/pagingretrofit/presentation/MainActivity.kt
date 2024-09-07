@@ -40,9 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        binding.list.adapter = repoAdapter
-        binding.list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
+        setUpRecyclerView()
         observer()
 
         binding.etSearchText.doAfterTextChanged { inputText ->
@@ -58,5 +56,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun setUpRecyclerView() {
+        binding.list.adapter = repoAdapter
+        binding.list.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        binding.list.adapter = repoAdapter.withLoadStateHeaderAndFooter(
+            header = RepoItemLoadingStateAdapter { repoAdapter.retry() },
+            footer = RepoItemLoadingStateAdapter { repoAdapter.retry() }
+        )
     }
 }

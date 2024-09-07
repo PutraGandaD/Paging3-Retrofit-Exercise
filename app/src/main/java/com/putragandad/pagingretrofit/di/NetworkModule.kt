@@ -28,7 +28,7 @@ object NetworkModule {
     fun provideOkHttpClient(authInterceptor: AuthInterceptor, httpLoggingInterceptor: HttpLoggingInterceptor, chuckerInterceptor: ChuckerInterceptor): OkHttpClient {
         return OkHttpClient().newBuilder()
             .addInterceptor(authInterceptor)
-            .addInterceptor(httpLoggingInterceptor)
+//            .addInterceptor(httpLoggingInterceptor)
             .addInterceptor(chuckerInterceptor)
             .build()
     }
