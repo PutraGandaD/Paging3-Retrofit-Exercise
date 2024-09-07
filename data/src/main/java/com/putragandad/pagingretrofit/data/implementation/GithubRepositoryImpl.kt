@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.Flow
 class GithubRepositoryImpl(
     private val remoteDataSource: RemoteDataSource
 ) : GithubRepository {
-    override fun searchRepo(username: String): Flow<PagingData<Repo>> = Pager(
+    override suspend fun searchRepo(username: String): Flow<PagingData<Repo>> = Pager(
         pagingSourceFactory = { GithubRepoPagingSource(remoteDataSource, username) },
         config = PagingConfig(
-            pageSize = 20
+            pageSize = 50
         )
     ).flow
 

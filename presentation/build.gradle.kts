@@ -65,4 +65,13 @@ dependencies {
 
     // Paging
     implementation(libs.androidx.paging)
+
+    // Koin (Dependency Injection)
+    // Declare koin-bom version
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    // Declare the koin dependencies that you need
+    implementation(libs.koin.android)
+    implementation(libs.koin.core.coroutines)
+    implementation(libs.koin.androidx.workmanager)
 }

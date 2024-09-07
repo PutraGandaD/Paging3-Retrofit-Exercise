@@ -5,5 +5,5 @@ import com.putragandad.pagingretrofit.domain.model.Repo
 import kotlinx.coroutines.flow.Flow
 
 interface GithubRepository {
-    fun searchRepo(username: String) : Flow<PagingData<Repo>>
+    suspend fun searchRepo(username: String) : Flow<PagingData<Repo>>
 }
