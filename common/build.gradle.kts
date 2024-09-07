@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.putragandad.pagingretrofit.data"
+    namespace = "com.putragandad.pagingretrofit.common"
     compileSdk = 34
 
     defaultConfig {
@@ -33,8 +33,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":common"))
-    implementation(project(":domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -48,7 +46,4 @@ dependencies {
     implementation(libs.retrofit.converter.gson)
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.serialization.json)
-
-    // Paging
-    implementation(libs.androidx.paging)
 }

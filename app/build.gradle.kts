@@ -36,6 +36,10 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":presentation"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -45,4 +49,38 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // ViewModel
+    implementation(libs.lifecycle.viewmodel.ktx)
+    // ViewModel utilities for Compose
+    implementation(libs.lifecycle.viewmodel.compose)
+    // LiveData
+    implementation(libs.lifecycle.livedata.ktx)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation(libs.lifecycle.runtime.ktx)
+    // Lifecycle utilities for Compose
+    implementation(libs.lifecycle.runtime.compose)
+    // Saved state module for ViewModel
+    implementation(libs.lifecycle.viewmodel.savedstate)
+    // Annotation processor
+    implementation(libs.lifecycle.compiler)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.serialization.json)
+
+    // Koin (Dependency Injection)
+    // Declare koin-bom version
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    // Declare the koin dependencies that you need
+    implementation(libs.koin.android)
+    implementation(libs.koin.core.coroutines)
+    implementation(libs.koin.androidx.workmanager)
+
+    // Chucker
+    debugImplementation(libs.chucker.debug)
+    releaseImplementation(libs.chucker.release)
 }

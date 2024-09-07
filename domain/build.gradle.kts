@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -40,4 +41,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Paging
+    implementation(libs.androidx.paging)
 }

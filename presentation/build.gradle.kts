@@ -30,9 +30,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation(project(":common"))
+    implementation(project(":domain"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -40,4 +45,24 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.navigation.ui.ktx)
+    implementation(libs.navigation.fragment.ktx)
+
+    // ViewModel
+    implementation(libs.lifecycle.viewmodel.ktx)
+    // ViewModel utilities for Compose
+    implementation(libs.lifecycle.viewmodel.compose)
+    // LiveData
+    implementation(libs.lifecycle.livedata.ktx)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation(libs.lifecycle.runtime.ktx)
+    // Lifecycle utilities for Compose
+    implementation(libs.lifecycle.runtime.compose)
+    // Saved state module for ViewModel
+    implementation(libs.lifecycle.viewmodel.savedstate)
+    // Annotation processor
+    implementation(libs.lifecycle.compiler)
+
+    // Paging
+    implementation(libs.androidx.paging)
 }

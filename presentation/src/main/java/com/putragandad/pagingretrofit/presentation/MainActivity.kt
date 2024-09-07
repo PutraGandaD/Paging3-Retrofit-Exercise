@@ -1,4 +1,4 @@
-package com.putragandad.pagingretrofit
+package com.putragandad.pagingretrofit.presentation
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
