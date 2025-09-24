@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.putragandad.pagingretrofit"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.putragandad.pagingretrofit"
